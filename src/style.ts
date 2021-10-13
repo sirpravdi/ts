@@ -1,16 +1,9 @@
 import { color } from './colors';
 import { markdown } from './md';
 
-
-interface Options {
-    font?: string;
-    effects?: string[];
-    bold?: boolean;
-    italic?: boolean;
-    mono?: boolean;
-    link?: string;
-    background?: string;
-}
+type ColorOptions = Parameters<typeof color>[1];
+type MarkdownOptions = Parameters<typeof markdown>[1];
+type Options = ColorOptions & MarkdownOptions;
 
 export function style(text: string, options: Options):string {
     if (text.length === 0) {
