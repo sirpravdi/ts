@@ -6,14 +6,14 @@ interface Options {
     effects?: string[];
 }
 
-function addColor(text: string, color: string, isBackground: boolean = false) {
+function addColor(text: string, color: string, isBackground: boolean = false):string {
     if (isBackground) {
         return text + backgroundColors[color];
     }
     return text + fontColors[color];
 }
 
-function getEffects(effectList: string[]) {
+function getEffects(effectList: string[]): string{
     return effectList.map((effect:string) => effects[effect]).join('');
 }
 
